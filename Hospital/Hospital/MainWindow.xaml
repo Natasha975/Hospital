@@ -1,0 +1,38 @@
+﻿<Window x:Class="Hospital.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        Title="" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" Height="300" Width="350">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0" Text="Вход в систему" 
+                  FontSize="18" FontWeight="Bold"
+                  HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <!-- Поле логина -->
+        <Label Grid.Row="1" Content="Логин:"/>
+        <TextBox Grid.Row="2" Margin="0,0,0,10" x:Name="LoginTB"/>
+
+        <!-- Поле пароля -->
+        <Label Grid.Row="3" Content="Пароль:"/>
+        <PasswordBox Grid.Row="4" x:Name="PasswordBx" Margin="0,0,0,20"/>
+
+        <!-- Кнопка входа -->
+        <Button Grid.Row="5" Content="Войти"
+                Padding="10,3" HorizontalAlignment="Center"
+                Width="100" Height="30" x:Name="Vxod" Click="Vxod_Click"/>
+    </Grid>
+</Window>

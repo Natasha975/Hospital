@@ -1,0 +1,32 @@
+﻿<Window x:Class="Hospital.RegistrarWindow.RegistrarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.RegistrarWindow"
+        mc:Ignorable="d"
+        Title="Hospital" Height="450" Width="800" MinHeight="450" MinWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+            <Button Grid.Column="0" Grid.Row="0" Content="Пациенты" x:Name="PatientView" Click="PatientView_Click"/>
+        </StackPanel>
+
+        <!-- Контентная область -->
+        <Frame x:Name="MainFrame" Grid.Column="1" Grid.RowSpan="2" NavigationUIVisibility="Hidden" />
+
+        <!-- Приветственная надпись (видна только когда Frame пуст) -->
+        <TextBlock x:Name="WelcomeText" Grid.Column="1" Grid.Row="1"
+            Text="Добро пожаловать в панель регистратора/медсестры!"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            FontSize="22" FontWeight="Bold" Foreground="LightGray"/>
+    </Grid>
+</Window>

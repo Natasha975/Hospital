@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1aa69882053b41ccb1783900d3e2417f" Name="Diagram1">
+        <EntityTypeShape EntityType="БольницаModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Адрес" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.АллергическаяРеакция" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Врач" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.ВрачОтделение" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Госпитализация" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Диагноз" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Документ" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Инвалидность" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.КартаПациента" Width="1.5" PointX="5.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Отделение" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Пациент" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.ПациентАллергическаяРеакция" Width="1.5" PointX="8.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Пользователи" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.ПредставительПациента" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Работа" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Роль" Width="1.5" PointX="6" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Статус" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="БольницаModel.Страховка" Width="1.5" PointX="0.75" PointY="17.125" IsExpanded="true" />
+        <AssociationConnector Association="БольницаModel.FK__Пациент__Адрес__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__ПациентАл__Номер__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__ВрачОтделе__Врач__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Госпитали__Номер__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK_Пользователи_Врач" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__ВрачОтдел__Отдел__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Госпитали__Номер__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Госпитали__Номер__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Госпитали__Стату__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Диагноз__НомерПа__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Пациент__НомерДо__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Представи__Номер__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Инвалидно__Номер__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__КартаПаци__Номер__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Пациент__НомерСт__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Пациент__Работа__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__ПациентАл__Номер__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK__Представи__Номер__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="БольницаModel.FK_Пользователи_Роль" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

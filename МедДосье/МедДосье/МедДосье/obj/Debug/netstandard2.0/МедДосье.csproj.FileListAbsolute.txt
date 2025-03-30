@@ -1,0 +1,16 @@
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\bin\Debug\netstandard2.0\МедДосье.deps.json
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\bin\Debug\netstandard2.0\МедДосье.dll
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\bin\Debug\netstandard2.0\ref\МедДосье.dll
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\bin\Debug\netstandard2.0\МедДосье.pdb
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\МедДосье.csproj.AssemblyReference.cache
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\МедДосье.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\МедДосье.AssemblyInfoInputs.cache
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\МедДосье.AssemblyInfo.cs
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\МедДосье.csproj.CoreCompileInputs.cache
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\МедДосье.dll
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\refint\МедДосье.dll
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\МедДосье.pdb
+C:\Users\Наталья\Documents\Производственная практика\МедДосье\МедДосье\МедДосье\obj\Debug\netstandard2.0\LoginPage.xaml.g.cs
