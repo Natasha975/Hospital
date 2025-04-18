@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="МедДосье.DoctorListPage"
+             x:Name="doctorListPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding SpecialityName}"
+				   FontSize="24"
+				   TextColor="Black"
+				   HorizontalOptions="Center"
+				   Margin="0,20"/>
+
+            <CollectionView ItemsSource="{Binding Doctors}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="10" Padding="15" Margin="5" BackgroundColor="#EBF5FF" BorderColor="#EBF5FF">
+                            <StackLayout>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding Image}" HeightRequest="70"
+											   WidthRequest="70" HorizontalOptions="Start"/>
+
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding Name}" FontSize="16" TextColor="Black"/>
+
+                                            <Label Text="{Binding Description}" FontSize="14" TextColor="Black"/>
+
+                                            <StackLayout Orientation="Horizontal" Spacing="5">
+                                                <Label Text="Приём:" FontSize="14" TextColor="#555555"/>
+                                                <Label Text="{Binding Price}" FontSize="14" FontAttributes="Bold" TextColor="Black"/>
+                                                <Label Text="₽" FontSize="14" TextColor="Black"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <!-- Кнопки выбора даты -->
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,10">
+                                        <Button Text="{Binding TodayText}" 
+                                             Command="{Binding Path=BindingContext.SelectDateCommand, Source={x:Reference doctorListPage}}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="#4CAF50" TextColor="White"
+                                            CornerRadius="5" WidthRequest="70"/>
+
+                                        <Button Text="{Binding TomorrowText}"
+                                            Command="{Binding BindingContext.SelectDateCommand, Source={x:Reference Name=doctorListPage}}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="#2196F3" TextColor="White"
+                                            CornerRadius="5" WidthRequest="70"/>
+
+                                        <Button Text="{Binding DayAfterTomorrowText}"
+                                            Command="{Binding BindingContext.SelectDateCommand, Source={x:Reference Name=doctorListPage}}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="#FF9800" TextColor="White"
+                                            CornerRadius="5" WidthRequest="70"/>
+
+                                        <Button Text="{Binding InThreeDaysText}"
+                                            Command="{Binding BindingContext.SelectDateCommand, Source={x:Reference Name=doctorListPage}}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="#9C27B0" TextColor="White"
+                                            CornerRadius="5" WidthRequest="70"/>
+                                    </StackLayout>
+
+                                    <!-- Список временных слотов (отображается только когда выбрана дата) -->
+                                    <StackLayout>
+                                        <StackLayout.Triggers>
+                                            <DataTrigger TargetType="StackLayout" Binding="{Binding SelectedDate}" Value="{x:Null}">
+                                                <Setter Property="IsVisible" Value="False" />
+                                            </DataTrigger>
+                                        </StackLayout.Triggers>
+
+                                        <Label Text="Доступное время:" Margin="0,10,0,5" FontSize="14" TextColor="#555555"/>
+
+                                        <FlexLayout BindableLayout.ItemsSource="{Binding TimeSlots}" Wrap="Wrap" JustifyContent="Start" AlignItems="Start">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Button Text="{Binding Time}" 
+                                                            Command="{Binding Path=BindingContext.SelectTimeCommand, Source={x:Reference doctorListPage}}"
+                                                            CommandParameter="{Binding .}"
+                                                            BackgroundColor="#4CAF50" TextColor="White"
+                                                            CornerRadius="5" Margin="5"
+                                                            WidthRequest="70" HeightRequest="40"/>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </FlexLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

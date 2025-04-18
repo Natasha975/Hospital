@@ -35,9 +35,7 @@ C:\Users\Наталья\Documents\Производственная практи�
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\AdminWindow\UsersPage.g.cs
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\AdminWindow\UsersPage.baml
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\AdminWindow\DoctorPage.g.cs
-C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\AdminWindow\PatientPage.g.cs
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\AdminWindow\DoctorPage.baml
-C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\AdminWindow\PatientPage.baml
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\RegistrarWindow\RegistrarWindow.g.cs
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\RegistrarWindow\RegistrarWindow.baml
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\AdminWindow\AddDoctorWindow.g.cs
@@ -46,3 +44,7 @@ C:\Users\Наталья\Documents\Производственная практи�
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\AdminWindow\AddUserWindow.baml
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\RegistrarWindow\AddPatientWindow.g.cs
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\RegistrarWindow\AddPatientWindow.baml
+C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\RegistrarWindow\PatientPage.g.cs
+C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\RegistrarWindow\PatientPage.baml
+C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\RegistrarWindow\EditPatientPage.g.cs
+C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\obj\Debug\RegistrarWindow\EditPatientPage.baml

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="МедДосье.UserProfilePage"
+              Title="Мой профиль">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+                <!-- Заголовок с аватаром -->
+                <StackLayout HorizontalOptions="Center" Spacing="10">
+                    <Label Text="Профиль" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <!-- Информация о пользователе -->
+                <Frame CornerRadius="10" Padding="15" BackgroundColor="#F5F5F5">
+                    <StackLayout Spacing="10">
+                        <Label Text="Личные данные" FontSize="16" FontAttributes="Bold"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="ФИО:" TextColor="Gray" VerticalOptions="Center"/>
+                            <Label Text="{Binding FullName}" Grid.Column="1" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Email:" TextColor="Gray" VerticalOptions="Center"/>
+                            <Label Text="{Binding Email}" Grid.Column="1" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Email:" TextColor="Gray" VerticalOptions="Center"/>
+                            <Label Text="{Binding BirthDate, StringFormat='{0:dd.MM.yyyy}'}" Grid.Column="1" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Email:" TextColor="Gray" VerticalOptions="Center"/>
+                            <Label Text="{Binding Gender}" Grid.Column="1" VerticalOptions="Center"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Кнопки действий -->
+                <Button Text="Редактировать профиль" BackgroundColor="White" TextColor="Brown" BorderColor="Brown" BorderWidth="1"
+                        CornerRadius="25" Clicked="OnEditProfileClicked"/>
+
+                <Button Text="История консультаций" BackgroundColor="White" TextColor="Brown" BorderColor="Brown" BorderWidth="1"
+                        CornerRadius="25" Clicked="OnConsultationHistoryClicked"/>
+
+                <Button Text="Выйти из аккаунта" BackgroundColor="White" TextColor="Red" BorderColor="Red" BorderWidth="1" CornerRadius="25"
+                        Margin="0,30,0,0" Clicked="OnLogoutClicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

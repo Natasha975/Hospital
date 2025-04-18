@@ -1,0 +1,182 @@
+﻿<Page x:Class="Hospital.RegistrarWindow.EditPatientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hospital.RegistrarWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="950" d:DesignWidth="800"
+      Title="Редактирование пациента" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Редактирование информации о пациенте" FontSize="18" TextAlignment="Center"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Колонка 1: Личные данные -->
+                <StackPanel Grid.Column="0" Margin="5">
+                    <GroupBox Header="Личные данные" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Фамилия:" Margin="0,5"/>
+                            <TextBox x:Name="LastName" Text="{Binding Фамилия, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Имя:" Margin="0,5"/>
+                            <TextBox x:Name="FirstName" Text="{Binding Имя, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Отчество:" Margin="0,5"/>
+                            <TextBox x:Name="Patronymic" Text="{Binding Отчество, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Дата рождения:" Margin="0,5"/>
+                            <DatePicker x:Name="DateOfBirth" SelectedDate="{Binding ДатаРождения, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Пол:" Margin="0,5"/>
+                            <TextBox x:Name="Gender" Text="{Binding Пол, Mode=OneWay}" Margin="0,0,0,10"/>
+                            <!--<ComboBox SelectedItem="{Binding Пол}" Margin="0,0,0,10">
+                                <ComboBoxItem>Мужской</ComboBoxItem>
+                                <ComboBoxItem>Женский</ComboBoxItem>
+                            </ComboBox>-->
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="Документы" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="СНИЛС:" Margin="0,5"/>
+                            <!--<Label Content="{Binding СНИЛС}" Margin="0,0,0,10"></Label>-->
+                            <TextBox x:Name="SNILSTB" Text="{Binding СНИЛС, Mode=OneWay}" Margin="0,0,0,10" TextInput="TextBox_PreviewTextInput"/>
+
+                            <TextBlock Text="ИНН:" Margin="0,5"/>
+                            <!--<Label Content="{Binding ИНН}" Margin="0,0,0,10"></Label>-->
+                            <TextBox x:Name="INNTB" Text="{Binding ИНН, Mode=OneWay}" Margin="0,0,0,10" TextInput="TextBox_PreviewTextInput"/>
+
+                            <TextBlock Text="Документ удостоверяющий личность:" Margin="0,5"/>
+                            <ComboBox x:Name="DocumentTypeComboBox" 
+                                              SelectedValue="{Binding НаименованиеДокумента, Mode=OneWay}"
+                                              SelectedValuePath="Content"
+                                              Margin="0,0,0,10">
+                                <ComboBoxItem>Паспорт гражданина РФ</ComboBoxItem>
+                                <ComboBoxItem>Свидетельство о рождении</ComboBoxItem>
+                                <ComboBoxItem>Временное удостоверение</ComboBoxItem>
+                            </ComboBox>
+                            <TextBlock Text="Серия:" Margin="0,5"/>
+                            <TextBox x:Name="DocumentSeriesTextBox" Text="{Binding Серия, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Номер:" Margin="0,5"/>
+                            <TextBox x:Name="DocumentNumberTextBox" Text="{Binding Номер, Mode=OneWay}" Margin="0,0,0,10"/>
+                            <!--<TextBox Text="{Binding НомерДокумента}" Margin="0,0,0,10"/>-->
+
+                            <TextBlock Text="Дата выдачи:" Margin="0,5"/>
+                            <DatePicker x:Name="DocumentIssueDatePicker" SelectedDate="{Binding ДатаВыдачи, Mode=OneWay}" 
+                                        Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Кем выдан:" Margin="0,5"/>
+                            <TextBox x:Name="DocumentIssuedByTextBox" Text="{Binding КемВыдан, Mode=OneWay}" Margin="0,0,0,10"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+                <!-- Колонка 2: Контактная информация -->
+                <StackPanel Grid.Column="1" Margin="5">
+                    <GroupBox Header="Контактная информация" Margin="0,0,0,10">
+
+                        <StackPanel>
+
+                            <TextBlock Text="Телефон:" Margin="0,5"/>
+                            <TextBox x:Name="PhoneTB" Text="{Binding Телефон, Mode=OneWay}" Margin="0,0,0,10" TextInput="TextBox_PreviewTextInput">
+                                <TextBox.ToolTip>
+                                    <ToolTip>
+                                        Введите номер телефона в формате: 79991234567
+                                    </ToolTip>
+                                </TextBox.ToolTip>
+                            </TextBox>
+
+                            <TextBlock Text="Субъект:" Margin="0,5"/>
+                            <TextBox x:Name="SubjectTB" Text="{Binding Субъект, Mode=OneWay}" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Район:" Margin="0,5"/>
+                            <TextBox x:Name="DistristTB" Text="{Binding Район, Mode=OneWay}" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Город:" Margin="0,5"/>
+                            <TextBox x:Name="CityTB" Text="{Binding Город, Mode=OneWay}" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Населенный пункт:" Margin="0,5"/>
+                            <TextBox x:Name="TownTB" Text="{Binding НаселенныйПункт, Mode=OneWay}" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Улица:" Margin="0,5"/>
+                            <TextBox x:Name="StreetTB" Text="{Binding Улица, Mode=OneWay}" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Дом:" Margin="0,5"/>
+                            <TextBox x:Name="HouseTB" Text="{Binding Дом, Mode=OneWay}" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Квартира:" Margin="0,5"/>
+                            <TextBox x:Name="ApartmentTB" Text="{Binding Квартира, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="Страхование" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Серия и номер полиса:" Margin="0,5"/>
+                            <TextBox x:Name="InsurancePolicyTextBox" Text="{Binding СерияНомер, Mode=OneWay}" Margin="0,0,0,10"/>
+                            <!--<Label Content="{Binding СерияНомер, Mode=OneWay}" Margin="0,0,0,10"/>-->
+
+                            <TextBlock Text="Наименование страховой компании:" Margin="0,5"/>
+                            <TextBox x:Name="InsuranceCompanyTextBox" Text="{Binding НаименованиеСтраховойКомпании, Mode=OneWay}" Margin="0,0,0,10"/>
+                            <!--<Label Content="{Binding НаименованиеСтраховойКомпании, Mode=OneWay}" Margin="0,0,0,10"/>-->
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="5">
+                    <GroupBox Header="Социальная информация" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Семейное положение:" Margin="0,5"/>
+                            <TextBox x:Name="MaritalStatusTB" Text="{Binding СемейноеПоложение, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Образование:" Margin="0,5"/>
+                            <TextBox x:Name="EducationTB" Text="{Binding Образование, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Занятость:" Margin="0,5"/>
+                            <TextBox x:Name="BusynessTB" Text="{Binding Занятость, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Место работы:" Margin="0,5"/>
+                            <TextBox x:Name="PlaceOfWorkTB" Text="{Binding МестоРаботы, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Должность:" Margin="0,5"/>
+                            <TextBox x:Name="PostTB" Text="{Binding Должность, Mode=OneWay}" Margin="0,0,0,10"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="Ивалидность" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Группа:" Margin="0,5"/>
+                            <TextBox x:Name="DisabilityGroupTB" Text="{Binding Группа, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Описание:" Margin="0,5"/>
+                            <TextBox x:Name="DisabilityOfDescriptionTB" Text="{Binding Описание, Mode=OneWay}" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Дата:" Margin="0,5"/>
+                            <DatePicker x:Name="DisabilityDateTB" Text="{Binding Дата, Mode=OneWay}" Margin="0,0,0,10"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+                <StackPanel Grid.ColumnSpan="3" Grid.Column="1" Orientation="Horizontal" 
+                        HorizontalAlignment="Right" Margin="0,600,0,0">
+                    <Button Content="Сохранить" Width="120" Margin="5" Click="Save_Click"/>
+                    <Button Content="Отмена" Width="120" Margin="5" Click="Cancel_Click"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -3,62 +3,372 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hospital.RegistrarWindow"
         mc:Ignorable="d"
-        Title="Добавление пациента" 
-        Height="320" Width="550"
-        WindowStartupLocation="CenterOwner">
+        Title="Hospital" 
+        MinHeight="600" MinWidth="800" WindowState="Maximized"
+        WindowStartupLocation="CenterOwner" Icon="/Hospital;component/Image/MedicalIcon.ico"
+        ResizeMode="CanResizeWithGrip">
 
-    <Grid Margin="10">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
 
-        <!-- Левый столбец -->
-        <Label Content="Фамилия:" Grid.Row="0" Grid.Column="0"/>
-        <TextBox x:Name="LastNameTextBox" Grid.Row="1" Grid.Column="0" Margin="0,0,5,5"/>
+        <Label Content="Регистрация нового пациента" FontWeight="Bold" FontSize="16" Margin="0,0,0,10" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
 
-        <Label Content="Имя:" Grid.Row="2" Grid.Column="0"/>
-        <TextBox x:Name="FirstNameTextBox" Grid.Row="3" Grid.Column="0" Margin="0,0,5,5"/>
+        <!-- TreeView для навигации -->
+        <TreeView Grid.Column="0" Grid.Row="1" Margin="5" SelectedItemChanged="TreeView_SelectedItemChanged">
+            <TreeViewItem Header="Личные данные" Tag="PersonalData"/>
+            <TreeViewItem Header="Здоровье" Tag="Health"/>
+            <TreeViewItem Header="Документы" Tag="Documents"/>
+            <TreeViewItem Header="Контактная информация" Tag="ContactInfo"/>
+            <TreeViewItem Header="Адрес" Tag="Address"/>
+            <TreeViewItem Header="Страхование" Tag="Insurance"/>
+            <TreeViewItem Header="Социальная информация" Tag="SocialInfo"/>
+            <TreeViewItem Header="Инвалидность" Tag="Disability"/>
+        </TreeView>
 
-        <Label Content="Отчество:" Grid.Row="4" Grid.Column="0"/>
-        <TextBox x:Name="MiddleNameTextBox" Grid.Row="5" Grid.Column="0" Margin="0,0,5,5"/>
+        <!-- Контентная область с ScrollViewer -->
+        <ScrollViewer Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <!-- Личные данные -->
+                <StackPanel x:Name="PersonalDataPanel" Margin="5" >
+                    <GroupBox Header="Личные данные">
 
-        <Label Content="Дата рождения:" Grid.Row="6" Grid.Column="0"/>
-        <DatePicker x:Name="BirthDatePicker" Grid.Row="7" Grid.Column="0" Margin="0,0,5,5"/>
+                        <StackPanel>
+                            <TextBlock Text="Фамилия*:" Margin="0,5"/>
+                            <TextBox x:Name="LastNameTextBox" Margin="0,0,0,10"/>
 
-        <!-- Правый столбец -->
-        <Label Content="Пол:" Grid.Row="0" Grid.Column="1"/>
-        <ComboBox x:Name="GenderComboBox" Grid.Row="1" Grid.Column="1" Margin="5,0,0,5">
-            <ComboBoxItem Content="Мужской"/>
-            <ComboBoxItem Content="Женский"/>
-        </ComboBox>
+                            <TextBlock Text="Имя*:" Margin="0,5"/>
+                            <TextBox x:Name="FirstNameTextBox" Margin="0,0,0,10"/>
 
-        <Label Content="Телефон:" Grid.Row="2" Grid.Column="1"/>
-        <TextBox x:Name="PhoneTextBox" Grid.Row="3" Grid.Column="1" Margin="5,0,0,5"/>
+                            <TextBlock Text="Отчество:" Margin="0,5"/>
+                            <TextBox x:Name="MiddleNameTextBox" Margin="0,0,0,10"/>
 
-        <Label Content="СНИЛС:" Grid.Row="4" Grid.Column="1"/>
-        <TextBox x:Name="SnilsTextBox" Grid.Row="5" Grid.Column="1" Margin="5,0,0,5"/>
+                            <TextBlock Text="Дата рождения*:" Margin="0,5"/>
+                            <DatePicker x:Name="BirthDatePicker" Margin="0,0,0,10" SelectedDateChanged="BirthDatePicker_SelectedDateChanged"/>
 
-        <Label Content="Номер документа:" Grid.Row="6" Grid.Column="1"/>
-        <TextBox x:Name="DocNumberTextBox" Grid.Row="7" Grid.Column="1" Margin="5,0,0,5"/>
+                            <TextBlock Text="Пол*:" Margin="0,5"/>
+                            <ComboBox x:Name="GenderComboBox" Margin="0,0,0,10">
+                                <ComboBoxItem>М</ComboBoxItem>
+                                <ComboBoxItem>Ж</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </GroupBox>
 
-        <!-- Кнопки (растягиваем на оба столбца) -->
-        <StackPanel Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
-            <Button Content="Сохранить" Width="100" Margin="5" Click="SaveButton_Click"/>
-            <Button Content="Отмена" Width="100" Margin="5" Click="CancelButton_Click"/>
+                    <!-- Представитель -->
+                    <StackPanel x:Name="RepresentativePanel" Margin="0,10,0,0" Visibility="Collapsed">
+
+                        <GroupBox Header="Представитель пациента">
+                            <StackPanel>
+                                <TextBlock Text="Наименование представителя:" Margin="0,5"/>
+                                <ComboBox x:Name="RepresentativeTypeComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                    <ComboBoxItem Content="Мать"/>
+                                    <ComboBoxItem Content="Отец"/>
+                                    <ComboBoxItem Content="Опекун"/>
+                                    <ComboBoxItem Content="Попечитель"/>
+                                    <ComboBoxItem Content="Иной законный представитель"/>
+                                </ComboBox>
+
+                                <TextBlock Text="Фамилия*:" Margin="0,5"/>
+                                <TextBox x:Name="RepresentativeLastNameTextBox" Margin="0,0,0,10"/>
+
+                                <TextBlock Text="Имя*:" Margin="0,5"/>
+                                <TextBox x:Name="RepresentativeFirstNameTextBox" Margin="0,0,0,10"/>
+
+                                <TextBlock Text="Отчество:" Margin="0,5"/>
+                                <TextBox x:Name="RepresentativeMiddleNameTextBox" Margin="0,0,0,10"/>
+
+                                <TextBlock Text="Телефон*:" Margin="0,5"/>
+                                <TextBox x:Name="RepresentativePhoneTextBox" Margin="0,0,0,10">
+                                    <TextBox.ToolTip>
+                                        <ToolTip>
+                                            Введите номер телефона в формате: 79991234567
+                                        </ToolTip>
+                                    </TextBox.ToolTip>
+                                </TextBox>
+
+                                <!-- Добавляем группу для документа представителя -->
+                                <GroupBox Header="Документ представителя" Margin="0,10,0,0">
+                                    <StackPanel>
+                                        <TextBlock Text="Тип документа:" Margin="0,5"/>
+                                        <ComboBox x:Name="RepresentativeDocTypeComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                            <ComboBoxItem Content="Паспорт гражданина РФ"/>
+                                            <ComboBoxItem Content="Заграничный паспорт"/>
+                                            <ComboBoxItem Content="Временное удостоверение личности"/>
+                                            <ComboBoxItem Content="Военный билет"/>
+                                            <ComboBoxItem Content="Удостоверение личности военнослужащего"/>
+                                            <ComboBoxItem Content="Иной документ"/>
+                                        </ComboBox>
+
+                                        <TextBlock Text="Серия:" Margin="0,5"/>
+                                        <TextBox x:Name="RepresentativeDocSeriesTextBox" Margin="0,0,0,10" TextInput="TextBox_PreviewTextInput"/>
+
+                                        <TextBlock Text="Номер:" Margin="0,5"/>
+                                        <TextBox x:Name="RepresentativeDocNumberTextBox" Margin="0,0,0,10" TextInput="TextBox_PreviewTextInput"/>
+
+                                        <TextBlock Text="Дата выдачи:" Margin="0,5"/>
+                                        <DatePicker x:Name="RepresentativeDocIssueDatePicker" Margin="0,0,0,10"/>
+
+                                        <TextBlock Text="Кем выдан*:" Margin="0,5"/>
+                                        <TextBox x:Name="RepresentativeDocIssuedByWhom" Margin="0,0,0,10"/>
+                                    </StackPanel>
+                                </GroupBox>
+                            </StackPanel>
+
+                        </GroupBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <CheckBox x:Name="HasRepresentativeCheckBox" Content="Есть представитель" Margin="0,10,0,5" Checked="HasRepresentativeCheckBox_Checked" Unchecked="HasRepresentativeCheckBox_Unchecked"/>
+
+                <!-- Здоровье -->
+                <StackPanel x:Name="HealthPanel" Margin="5" Visibility="Collapsed">
+                    <GroupBox Header="Медицинская информация">
+                        <StackPanel>
+                            <TextBlock Text="Группа крови:" Margin="0,5"/>
+                            <ComboBox x:Name="BloodGroupComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                <ComboBoxItem Content="Не указана"/>
+                                <ComboBoxItem Content="I (0)"/>
+                                <ComboBoxItem Content="II (A)"/>
+                                <ComboBoxItem Content="III (B)"/>
+                                <ComboBoxItem Content="IV (AB)"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Rh-фактор:" Margin="0,5"/>
+                            <ComboBox x:Name="RhFactorComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                <ComboBoxItem Content="Не указан"/>
+                                <ComboBoxItem Content="Rh+"/>
+                                <ComboBoxItem Content="Rh-"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Группа здоровья:" Margin="0,5"/>
+                            <ComboBox x:Name="HealthGroupComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                <ComboBoxItem Content="Не указана"/>
+                                <ComboBoxItem Content="I"/>
+                                <ComboBoxItem Content="II"/>
+                                <ComboBoxItem Content="III"/>
+                                <ComboBoxItem Content="IV"/>
+                                <ComboBoxItem Content="V"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Курение:" Margin="0,5"/>
+                            <ComboBox x:Name="SmokingComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                <ComboBoxItem Content="Не указано"/>
+                                <ComboBoxItem Content="Не курит"/>
+                                <ComboBoxItem Content="Курит"/>
+                                <ComboBoxItem Content="Бросил"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Наркомания/медикаментозная зависимость:" Margin="0,5"/>
+                            <ComboBox x:Name="DrugAddictionComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                <ComboBoxItem Content="Не указано"/>
+                                <ComboBoxItem Content="Нет"/>
+                                <ComboBoxItem Content="Да"/>
+                                <ComboBoxItem Content="В ремиссии"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Непереносимость препаратов:" Margin="0,5"/>
+                            <TextBox x:Name="DrugIntoleranceTextBox" Margin="0,0,0,10" 
+                                             TextWrapping="Wrap" AcceptsReturn="True" Height="60"
+                                             VerticalScrollBarVisibility="Auto"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+                <!-- Документы -->
+                <StackPanel x:Name="DocumentsPanel" Margin="5" Visibility="Collapsed">
+                    <GroupBox Header="Документы">
+
+                        <StackPanel>
+                            <TextBlock Text="СНИЛС*:" Margin="0,5"/>
+                            <TextBox x:Name="SnilsTextBox" Margin="0,0,0,10" TextInput="TextBox_PreviewTextInput"/>
+
+                            <TextBlock Text="ИНН:" Margin="0,5"/>
+                            <TextBox x:Name="InnTextBox" Margin="0,0,0,10" TextInput="TextBox_PreviewTextInput"/>
+
+                            <TextBlock Text="Документ удостоверяющий личность:" Margin="0,5"/>
+                            <ComboBox x:Name="IdentityDocumentComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                <ComboBoxItem Content="Паспорт гражданина РФ"/>
+                                <ComboBoxItem Content="Заграничный паспорт"/>
+                                <ComboBoxItem Content="Свидетельство о рождении"/>
+                                <ComboBoxItem Content="Временное удостоверение личности"/>
+                                <ComboBoxItem Content="Военный билет"/>
+                                <ComboBoxItem Content="Удостоверение личности военнослужащего"/>
+                                <ComboBoxItem Content="Иной документ"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Серия:" Margin="0,5"/>
+                            <TextBox x:Name="DocumentSeriesTextBox" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Номер:" Margin="0,5"/>
+                            <TextBox x:Name="DocumentNumberTextBox" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Дата выдачи*:" Margin="0,5"/>
+                            <DatePicker x:Name="PatientDocIssueDatePicker" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Кем выдан*:" Margin="0,5"/>
+                            <TextBox x:Name="PatientDocIssuedByWhom" Margin="0,0,0,10"/>
+                        </StackPanel>
+
+                    </GroupBox>
+                </StackPanel>
+
+                <!-- Контактная информация -->
+                <StackPanel x:Name="ContactInfoPanel" Margin="5" Visibility="Collapsed">
+                    <GroupBox Header="Контактная информация">
+
+                        <StackPanel>
+                            <TextBlock Text="Телефон*:" Margin="0,5"/>
+                            <TextBox x:Name="PhoneTextBox" Margin="0,0,0,10" TextInput="TextBox_PreviewTextInput">
+                                <TextBox.ToolTip>
+                                    <ToolTip>
+                                        Введите номер телефона в формате: 79991234567
+                                    </ToolTip>
+                                </TextBox.ToolTip>
+                            </TextBox>
+                        </StackPanel>
+
+                    </GroupBox>
+                </StackPanel>
+
+                <!-- Адрес -->
+                <StackPanel x:Name="AddressPanel" Margin="5" Visibility="Collapsed">
+                    <GroupBox Header="Адрес">
+
+                        <StackPanel>
+                            <TextBlock Text="Субъект:" Margin="0,5"/>
+                            <ComboBox x:Name="RegionComboBox" Margin="0,0,0,5" DisplayMemberPath="Name"
+                                      IsEditable="True" IsTextSearchEnabled="True" StaysOpenOnEdit="True" TextSearch.TextPath="Name"/>
+
+                            <TextBlock Text="Район:" Margin="0,5"/>
+                            <TextBox x:Name="DistrictTextBox" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Город:" Margin="0,5"/>
+                            <TextBox x:Name="CityTextBox" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Населенный пункт:" Margin="0,5"/>
+                            <TextBox x:Name="LocalityTextBox" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Улица:" Margin="0,5"/>
+                            <TextBox x:Name="StreetTextBox" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Дом:" Margin="0,5"/>
+                            <TextBox x:Name="HouseTextBox" Margin="0,0,0,5"/>
+
+                            <TextBlock Text="Квартира:" Margin="0,5"/>
+                            <TextBox x:Name="ApartmentTextBox" Margin="0,0,0,10"/>
+
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+                <!-- Страхование -->
+                <StackPanel x:Name="InsurancePanel" Margin="5" Visibility="Collapsed">
+                    <GroupBox Header="Страхование">
+
+                        <StackPanel>
+                            <TextBlock Text="Серия и номер полиса:" Margin="0,5"/>
+                            <TextBox x:Name="InsurancePolicyLabel" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Наименование страховой компании:" Margin="0,5"/>
+                            <TextBox x:Name="InsuranceCompanyLabel" Margin="0,0,0,10"/>
+                        </StackPanel>
+
+                    </GroupBox>
+                </StackPanel>
+
+                <!-- Социальная информация -->
+                <StackPanel x:Name="SocialInfoPanel" Margin="5" Visibility="Collapsed">
+                    <GroupBox Header="Социальная информация">
+
+                        <StackPanel>
+                            <TextBlock Text="Семейное положение:" Margin="0,5"/>
+                            <ComboBox x:Name="MaritalStatusComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                <ComboBoxItem Content="Не выбрано"/>
+                                <ComboBoxItem Content="Холост/Не замужем"/>
+                                <ComboBoxItem Content="Женат/Замужем"/>
+                                <ComboBoxItem Content="Разведен/Разведена"/>
+                                <ComboBoxItem Content="Вдовец/Вдова"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Образование:" Margin="0,5"/>
+                            <ComboBox x:Name="EducationComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                <ComboBoxItem Content="Не указано"/>
+                                <ComboBoxItem Content="Среднее"/>
+                                <ComboBoxItem Content="Среднее специальное"/>
+                                <ComboBoxItem Content="Неоконченное высшее"/>
+                                <ComboBoxItem Content="Высшее"/>
+                                <ComboBoxItem Content="Бакалавр"/>
+                                <ComboBoxItem Content="Магистр"/>
+                                <ComboBoxItem Content="Кандидат наук"/>
+                                <ComboBoxItem Content="Доктор наук"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Занятость:" Margin="0,5"/>
+                            <ComboBox x:Name="EmploymentComboBox" Margin="0,0,0,10" SelectedIndex="0">
+                                <ComboBoxItem Content="Не выбрано"/>
+                                <ComboBoxItem Content="Работает"/>
+                                <ComboBoxItem Content="Безработный"/>
+                                <ComboBoxItem Content="Студент"/>
+                                <ComboBoxItem Content="Пенсионер"/>
+                                <ComboBoxItem Content="Фрилансер"/>
+                                <ComboBoxItem Content="Самозанятый"/>
+                                <ComboBoxItem Content="В декрете"/>
+                                <ComboBoxItem Content="Частичная занятость"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Место работы:" Margin="0,5"/>
+                            <TextBox x:Name="WorkPlaceTextBox" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="Должность:" Margin="0,5"/>
+                            <TextBox x:Name="PositionTextBox" Margin="0,0,0,10"/>
+                        </StackPanel>
+
+                    </GroupBox>
+                </StackPanel>
+
+                <!-- Инвалидность -->
+                <StackPanel x:Name="DisabilityPanel" Margin="5" Visibility="Collapsed">
+                    <GroupBox Header="Ивалидность">
+
+                        <StackPanel>
+                            <TextBlock Text="Есть ли инвалидность:" Margin="0,5"/>
+                            <ComboBox x:Name="HasDisabilityComboBox" Margin="0,0,0,10" SelectionChanged="HasDisabilityComboBox_SelectionChanged">
+                                <ComboBoxItem>Нет</ComboBoxItem>
+                                <ComboBoxItem>Да</ComboBoxItem>
+                            </ComboBox>
+
+                            <StackPanel x:Name="DisabilityPanel1" Visibility="Collapsed">
+                                <TextBlock Text="Группа инвалидности:" Margin="0,5"/>
+                                <ComboBox x:Name="DisabilityGroupComboBox" Margin="0,0,0,10">
+                                    <ComboBoxItem>1</ComboBoxItem>
+                                    <ComboBoxItem>2</ComboBoxItem>
+                                    <ComboBoxItem>3</ComboBoxItem>
+                                    <ComboBoxItem>Ребенок-инвалид</ComboBoxItem>
+                                </ComboBox>
+
+                                <TextBlock Text="Описание:" Margin="0,5"/>
+                                <TextBox x:Name="DisabilityDescriptionTextBox" Margin="0,0,0,10"/>
+
+                                <TextBlock Text="Дата установления:" Margin="0,5"/>
+                                <DatePicker x:Name="DisabilityDatePicker" Margin="0,0,0,10"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="Добавить" Width="120" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Отмена" Width="120" Margin="5" Click="CancelButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

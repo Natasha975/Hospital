@@ -1,18 +1,9 @@
 ﻿using Hospital.Model;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Hospital.AdminWindow
 {
@@ -29,44 +20,58 @@ namespace Hospital.AdminWindow
 			LoadData();
 		}
 
+		// Загрузка данных о врачах из базы данных
 		public void LoadData()
 		{
-			var quer = db.Врач.ToList();
+			var doctors = db.Врач.ToList();
+			var usedDoctorsIds = db.Пользователи.Select(u => u.НомерВрача).ToList();
 
-			DoctorsGrid.ItemsSource = quer;
+			var doctorViews = doctors.Select(d => new DoctorView(d, db)
+			{
+				IsUsed = usedDoctorsIds.Contains(d.НомерВрача)
+			}).ToList();
+
+			DoctorsGrid.ItemsSource = doctorViews;
 		}
 
+		// Обработчик нажатия кнопки добавления врача
 		private void AddDoctor_Click(object sender, RoutedEventArgs e)
 		{
+			// Создаем и показываем окно добавления врача
 			var addWindow = new AddDoctorWindow(db)
 			{
 				Owner = Window.GetWindow(this)
 			};
 
+			// Если окно закрыто с результатом true, обновляем данные
 			if (addWindow.ShowDialog() == true)
 			{
 				LoadData();
 			}
 		}
 
+		// Обработчик нажатия кнопки удаления врача
 		private void DeleteDoctor_Click(object sender, RoutedEventArgs e)
 		{
-			// Получение выделенного врача
-			var selectedDoctor = DoctorsGrid.SelectedItem as Врач;
+			var selectedDoctor = DoctorsGrid.SelectedItem as DoctorView;
 
-			// Проверка, что врач выбран
 			if (selectedDoctor == null)
 			{
-				MessageBox.Show("Выберите врача для удаления", "Информация",
-							  MessageBoxButton.OK, MessageBoxImage.Information);
+				MessageBox.Show("Выберите врача для удаления", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+				return;
+			}
+
+			// Проверка, связан ли врач с пользователем
+			bool isDoctorInUse = db.Пользователи.Any(u => u.НомерВрача == selectedDoctor.НомерВрача);
+
+			if (isDoctorInUse)
+			{
+				MessageBox.Show("Нельзя удалить врача, так как он связан с учетной записью пользователя.\nСначала удалите соответствующего пользователя.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 				return;
 			}
 
 			// Запрос подтверждения удаления
-			var result = MessageBox.Show($"Вы уверены, что хотите удалить врача {selectedDoctor.Фамилия} {selectedDoctor.Имя}?",
-									   "Подтверждение удаления",
-									   MessageBoxButton.YesNo,
-									   MessageBoxImage.Question);
+			var result = MessageBox.Show($"Вы уверены, что хотите удалить врача {selectedDoctor.Фамилия} {selectedDoctor.Имя}?", "Подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
 			if (result == MessageBoxResult.Yes)
 			{
@@ -84,18 +89,27 @@ namespace Hospital.AdminWindow
 						// Обновление списка врачей
 						LoadData();
 
-						MessageBox.Show("Врач успешно удален", "Успех",
-									   MessageBoxButton.OK, MessageBoxImage.Information);
+						MessageBox.Show("Врач успешно удален", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
 					}
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show($"Ошибка при удалении врача: {ex.Message}", "Ошибка",
-								  MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show($"Ошибка при удалении врача: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 				}
 			}
 		}
 
+		// Обработчик изменения выбранного элемента в DataGrid
+		private void DoctorsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (DoctorsGrid.SelectedItem != null)
+			{
+				var selectedDoctor = DoctorsGrid.SelectedItem as DoctorView;
+				DeleteDoctor.IsEnabled = !selectedDoctor.IsUsed;
+			}
+		}
+
+		// Обработчик нажатия клавиш в DataGrid
 		private void DoctorsGrid_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.Key == Key.Delete)
@@ -104,9 +118,18 @@ namespace Hospital.AdminWindow
 			}
 		}
 
-		private void Save_Click(object sender, RoutedEventArgs e)
+		// Обработчик нажатия кнопки сохранения изменений
+		private async void Save_Click(object sender, RoutedEventArgs e)
 		{
-			db.SaveChanges();
+			try
+			{
+				await db.SaveChangesAsync();
+				MessageBox.Show("Данные сохранены успешно!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Ошибка при сохранении: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
 		}
 	}
 }

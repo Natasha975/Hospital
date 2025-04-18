@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Hospital.AdminWindow"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800">
+      d:DesignHeight="450" d:DesignWidth="700">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,13 +16,16 @@
 
         <TextBlock Grid.Row="0" Text="Список пользователей" FontSize="18" TextAlignment="Center"/>
 
-        <DataGrid x:Name="UsersGrid" Grid.Row="1" AutoGenerateColumns="False" Margin="0,10,0,0" SelectionMode="Single" SelectionUnit="FullRow" KeyDown="DoctorsGrid_KeyDown">
+        <DataGrid x:Name="UsersGrid" Grid.Row="1" AutoGenerateColumns="False" Margin="10" 
+                  SelectionMode="Single" SelectionUnit="FullRow" KeyDown="DoctorsGrid_KeyDown"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True"
+                  PreviewMouseLeftButtonDown="UsersGrid_PreviewMouseLeftButtonDown">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Логин" Binding="{Binding Логин}" Width="120"/>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding Фамилия}" Width="200"/>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Имя}" Width="200"/>
-                <DataGridTextColumn Header="Отчество" Binding="{Binding Отчество}" Width="200"/>
-                <DataGridTextColumn Header="Роль" Binding="{Binding Роль}" Width="*"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Фамилия}" Width="120"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Имя}" Width="100"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Отчество}" Width="120"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding Роль}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
 

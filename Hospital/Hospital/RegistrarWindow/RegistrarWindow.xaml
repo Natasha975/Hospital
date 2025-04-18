@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital.RegistrarWindow"
         mc:Ignorable="d"
-        Title="Hospital" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="Hospital" Height="450" Width="800" MinHeight="450" MinWidth="800" WindowState="Maximized" Icon="/Hospital;component/Image/MedicalIcon.ico">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -17,7 +18,9 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
-            <Button Grid.Column="0" Grid.Row="0" Content="Пациенты" x:Name="PatientView" Click="PatientView_Click"/>
+            <Button Grid.Column="0" Grid.Row="0" Content="Выйти" x:Name="ExitBt" Click="ExitBt_Click"/>
+            <Button Grid.Column="0" Grid.Row="0" Content="Пациенты" x:Name="PatientView" Margin="0,10,0,0" Click="PatientView_Click"/>
+            <Button Content="Назад" x:Name="BackBt" Margin="0,10,0,0" Click="BackButton_Click"/>
         </StackPanel>
 
         <!-- Контентная область -->
@@ -25,7 +28,7 @@
 
         <!-- Приветственная надпись (видна только когда Frame пуст) -->
         <TextBlock x:Name="WelcomeText" Grid.Column="1" Grid.Row="1"
-            Text="Добро пожаловать в панель регистратора/медсестры!"
+            Text="Добро пожаловать в панель регистратора!"
             HorizontalAlignment="Center" VerticalAlignment="Center"
             FontSize="22" FontWeight="Bold" Foreground="LightGray"/>
     </Grid>

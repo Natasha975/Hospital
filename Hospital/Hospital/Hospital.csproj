@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MedicalIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -81,9 +84,18 @@
     <Compile Include="AdminWindow\AddUserWindow.xaml.cs">
       <DependentUpon>AddUserWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\DoctorView.cs" />
+    <Compile Include="Model\PatientView.cs" />
+    <Compile Include="Model\Region.cs" />
     <Compile Include="Model\UserView.cs" />
     <Compile Include="RegistrarWindow\AddPatientWindow.xaml.cs">
       <DependentUpon>AddPatientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarWindow\EditPatientPage.xaml.cs">
+      <DependentUpon>EditPatientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarWindow\PatientPage.xaml.cs">
+      <DependentUpon>PatientPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrarWindow\RegistrarWindow.xaml.cs">
       <DependentUpon>RegistrarWindow.xaml</DependentUpon>
@@ -104,10 +116,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminWindow\PatientPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="AdminWindow\UsersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,9 +130,6 @@
     <Compile Include="AdminWindow\DoctorPage.xaml.cs">
       <DependentUpon>DoctorPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminWindow\PatientPage.xaml.cs">
-      <DependentUpon>PatientPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AdminWindow\UsersPage.xaml.cs">
       <DependentUpon>UsersPage.xaml</DependentUpon>
     </Compile>
@@ -137,6 +142,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegistrarWindow\AddPatientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrarWindow\EditPatientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrarWindow\PatientPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -252,6 +265,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image\MedicalIcon.ico" />
+    <Resource Include="MedicalIcon.ico" />
     <Content Include="Model\ModelDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelDB.Context.cs</LastGenOutput>
@@ -266,10 +281,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DoctorWindow\" />
-    <Folder Include="NurseWindow\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.2.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.2.1\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.Entity;
+using Hospital.AdminWindow;
+using Hospital.RegistrarWindow;
 using System.Windows.Media.Animation;
 
 namespace Hospital
@@ -34,37 +36,26 @@ namespace Hospital
 			{
 				using (var db = new БольницаEntities())
 				{
-					var quer = db.Пользователи.Include(p => p.Роль1).FirstOrDefault(p => p.Логин == LoginTB.Text && p.Пароль == PasswordBx.Password);
+					var quer = db.Пользователи.FirstOrDefault(p => p.Логин == LoginTB.Text && p.Пароль == PasswordBx.Password);
 
 					if (quer != null)
 					{
-						this.Hide();
-
-						Window windowToOpen;
-
-						switch(quer.Роль1.Ниаменование)
+						if (quer.Роль1.Ниаменование == "Администратор")
 						{
-							case "Администратор":
-								windowToOpen = new Window();
-								break;
-
-							case "Врач":
-								windowToOpen = new Window();
-								break;
-
-							case "Медесестра":
-								windowToOpen = new Window();
-								break;
-
-							default:
-								MessageBox.Show("Ошибка");
-								this.Show();
-								return;
+							AdminWindow.AdminWindow adminWindow = new AdminWindow.AdminWindow();
+							adminWindow.Show();
+							this.Close();
 						}
-
-						windowToOpen.Show();
-
-						this.Close();
+						else if (quer.Роль1.Ниаменование == "Регистратор")
+						{
+							RegistrarWindow.RegistrarWindow regWindow = new RegistrarWindow.RegistrarWindow();
+							regWindow.Show();
+							this.Close();
+						}
+						else
+						{
+							MessageBox.Show("Ошибка");
+						}
 					}
 				}
 			}

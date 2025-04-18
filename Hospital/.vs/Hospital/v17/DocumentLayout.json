@@ -1,12 +1,216 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|c:\\users\\\u043D\u0430\u0442\u0430\u043B\u044C\u044F\\documents\\\u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\hospital\\hospital\\registrarwindow\\editpatientpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\registrarwindow\\editpatientpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|c:\\users\\\u043D\u0430\u0442\u0430\u043B\u044C\u044F\\documents\\\u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\hospital\\hospital\\registrarwindow\\editpatientpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\registrarwindow\\editpatientpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\hospital\\registrarwindow\\addpatientwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\registrarwindow\\addpatientwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\hospital\\model\\\u0430\u0434\u0440\u0435\u0441.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\model\\\u0430\u0434\u0440\u0435\u0441.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\hospital\\model\\\u043F\u0430\u0446\u0438\u0435\u043D\u0442.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\model\\\u043F\u0430\u0446\u0438\u0435\u043D\u0442.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|c:\\users\\\u043D\u0430\u0442\u0430\u043B\u044C\u044F\\documents\\\u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\hospital\\hospital\\registrarwindow\\patientpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\registrarwindow\\patientpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\hospital\\model\\\u043A\u0430\u0440\u0442\u0430\u043F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\model\\\u043A\u0430\u0440\u0442\u0430\u043F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\hospital\\model\\\u0441\u0442\u0440\u0430\u0445\u043E\u0432\u043A\u0430.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\model\\\u0441\u0442\u0440\u0430\u0445\u043E\u0432\u043A\u0430.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\hospital\\model\\\u0438\u043D\u0432\u0430\u043B\u0438\u0434\u043D\u043E\u0441\u0442\u044C.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\model\\\u0438\u043D\u0432\u0430\u043B\u0438\u0434\u043D\u043E\u0441\u0442\u044C.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\hospital\\model\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\model\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\hospital\\model\\\u0430\u043B\u043B\u0435\u0440\u0433\u0438\u0447\u0435\u0441\u043A\u0430\u044F\u0440\u0435\u0430\u043A\u0446\u0438\u044F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\model\\\u0430\u043B\u043B\u0435\u0440\u0433\u0438\u0447\u0435\u0441\u043A\u0430\u044F\u0440\u0435\u0430\u043A\u0446\u0438\u044F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\hospital\\model\\\u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044C\u043F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D966AE42-5BDC-47DB-BD31-77C65C3C374B}|Hospital\\Hospital.csproj|solutionrelative:hospital\\model\\\u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044C\u043F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 174,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PatientPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\RegistrarWindow\\PatientPage.xaml.cs",
+              "RelativeDocumentMoniker": "Hospital\\RegistrarWindow\\PatientPage.xaml.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\RegistrarWindow\\PatientPage.xaml.cs",
+              "RelativeToolTip": "Hospital\\RegistrarWindow\\PatientPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKgAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T19:45:00.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "\u041F\u0430\u0446\u0438\u0435\u043D\u0442.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u041F\u0430\u0446\u0438\u0435\u043D\u0442.cs",
+              "RelativeDocumentMoniker": "Hospital\\Model\\\u041F\u0430\u0446\u0438\u0435\u043D\u0442.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u041F\u0430\u0446\u0438\u0435\u043D\u0442.cs",
+              "RelativeToolTip": "Hospital\\Model\\\u041F\u0430\u0446\u0438\u0435\u043D\u0442.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwD4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T22:49:28.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddPatientWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\RegistrarWindow\\AddPatientWindow.xaml",
+              "RelativeDocumentMoniker": "Hospital\\RegistrarWindow\\AddPatientWindow.xaml",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\RegistrarWindow\\AddPatientWindow.xaml",
+              "RelativeToolTip": "Hospital\\RegistrarWindow\\AddPatientWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-17T22:14:22.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditPatientPage.xaml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\RegistrarWindow\\EditPatientPage.xaml",
+              "RelativeDocumentMoniker": "Hospital\\RegistrarWindow\\EditPatientPage.xaml",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\RegistrarWindow\\EditPatientPage.xaml",
+              "RelativeToolTip": "Hospital\\RegistrarWindow\\EditPatientPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-18T20:06:24.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditPatientPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\RegistrarWindow\\EditPatientPage.xaml.cs",
+              "RelativeDocumentMoniker": "Hospital\\RegistrarWindow\\EditPatientPage.xaml.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\RegistrarWindow\\EditPatientPage.xaml.cs",
+              "RelativeToolTip": "Hospital\\RegistrarWindow\\EditPatientPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHMBAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T21:32:12.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "\u0421\u0442\u0440\u0430\u0445\u043E\u0432\u043A\u0430.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0421\u0442\u0440\u0430\u0445\u043E\u0432\u043A\u0430.cs",
+              "RelativeDocumentMoniker": "Hospital\\Model\\\u0421\u0442\u0440\u0430\u0445\u043E\u0432\u043A\u0430.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0421\u0442\u0440\u0430\u0445\u043E\u0432\u043A\u0430.cs",
+              "RelativeToolTip": "Hospital\\Model\\\u0421\u0442\u0440\u0430\u0445\u043E\u0432\u043A\u0430.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAswCAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T19:37:46.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "\u0410\u043B\u043B\u0435\u0440\u0433\u0438\u0447\u0435\u0441\u043A\u0430\u044F\u0420\u0435\u0430\u043A\u0446\u0438\u044F.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0410\u043B\u043B\u0435\u0440\u0433\u0438\u0447\u0435\u0441\u043A\u0430\u044F\u0420\u0435\u0430\u043A\u0446\u0438\u044F.cs",
+              "RelativeDocumentMoniker": "Hospital\\Model\\\u0410\u043B\u043B\u0435\u0440\u0433\u0438\u0447\u0435\u0441\u043A\u0430\u044F\u0420\u0435\u0430\u043A\u0446\u0438\u044F.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0410\u043B\u043B\u0435\u0440\u0433\u0438\u0447\u0435\u0441\u043A\u0430\u044F\u0420\u0435\u0430\u043A\u0446\u0438\u044F.cs",
+              "RelativeToolTip": "Hospital\\Model\\\u0410\u043B\u043B\u0435\u0440\u0433\u0438\u0447\u0435\u0441\u043A\u0430\u044F\u0420\u0435\u0430\u043A\u0446\u0438\u044F.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T19:34:19.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044C\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044C\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "RelativeDocumentMoniker": "Hospital\\Model\\\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044C\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044C\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "RelativeToolTip": "Hospital\\Model\\\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044C\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAkwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T22:18:11.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "\u041A\u0430\u0440\u0442\u0430\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u041A\u0430\u0440\u0442\u0430\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "RelativeDocumentMoniker": "Hospital\\Model\\\u041A\u0430\u0440\u0442\u0430\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u041A\u0430\u0440\u0442\u0430\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "RelativeToolTip": "Hospital\\Model\\\u041A\u0430\u0440\u0442\u0430\u041F\u0430\u0446\u0438\u0435\u043D\u0442\u0430.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAqwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T22:05:36.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "\u0418\u043D\u0432\u0430\u043B\u0438\u0434\u043D\u043E\u0441\u0442\u044C.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0418\u043D\u0432\u0430\u043B\u0438\u0434\u043D\u043E\u0441\u0442\u044C.cs",
+              "RelativeDocumentMoniker": "Hospital\\Model\\\u0418\u043D\u0432\u0430\u043B\u0438\u0434\u043D\u043E\u0441\u0442\u044C.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0418\u043D\u0432\u0430\u043B\u0438\u0434\u043D\u043E\u0441\u0442\u044C.cs",
+              "RelativeToolTip": "Hospital\\Model\\\u0418\u043D\u0432\u0430\u043B\u0438\u0434\u043D\u043E\u0441\u0442\u044C.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T22:05:28.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442.cs",
+              "RelativeDocumentMoniker": "Hospital\\Model\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442.cs",
+              "RelativeToolTip": "Hospital\\Model\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAkwCQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T22:05:20.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "\u0410\u0434\u0440\u0435\u0441.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0410\u0434\u0440\u0435\u0441.cs",
+              "RelativeDocumentMoniker": "Hospital\\Model\\\u0410\u0434\u0440\u0435\u0441.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Documents\\\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430\\Hospital\\Hospital\\Model\\\u0410\u0434\u0440\u0435\u0441.cs",
+              "RelativeToolTip": "Hospital\\Model\\\u0410\u0434\u0440\u0435\u0441.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwB4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T21:34:30.022Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,18 +1,9 @@
 ﻿using Hospital.Model;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
 namespace Hospital.AdminWindow
 {
 	/// <summary>
@@ -20,12 +11,14 @@ namespace Hospital.AdminWindow
 	/// </summary>
 	public partial class AddUserWindow : Window
 	{
-		private БольницаEntities _db;
+		private БольницаEntities db;
+		// Флаг совпадения паролей
+		private bool _passwordsMatch = false;
 
-		public AddUserWindow(БольницаEntities db)
+		public AddUserWindow(БольницаEntities _db)
 		{
 			InitializeComponent();
-			_db = db;
+			db = _db;
 			LoadRoles();
 			LoadDoctors();
 
@@ -33,17 +26,19 @@ namespace Hospital.AdminWindow
 			IsDoctorCheckBox.Unchecked += IsDoctorCheckBox_Unchecked;
 		}
 
+		// Загрузка списка ролей из базы данных в ComboBox
 		private void LoadRoles()
 		{
-			RoleComboBox.ItemsSource = _db.Роль.ToList();
+			RoleComboBox.ItemsSource = db.Роль.ToList();
 			RoleComboBox.DisplayMemberPath = "Ниаменование";
 			RoleComboBox.SelectedValuePath = "НомерЗаписи";
 		}
 
+		// Загрузка списка врачей из базы данных в ComboBox
 		private void LoadDoctors()
 		{
 
-			var doctors = _db.Врач.ToList();
+			var doctors = db.Врач.ToList();
 			DoctorComboBox.ItemsSource = doctors
 				.Select(d => new
 				{
@@ -60,12 +55,50 @@ namespace Hospital.AdminWindow
 			DoctorComboBox.SelectedValuePath = "НомерВрача";
 		}
 
+		// Обработчик изменения пароля в первом поле
+		private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+		{
+			CheckPasswordsMatch();
+		}
+
+		// Обработчик изменения пароля во втором поле (повтор)
+		private void RepeatPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+		{
+			CheckPasswordsMatch();
+		}
+
+		// Проверка совпадения паролей в обоих полях
+		private void CheckPasswordsMatch()
+		{
+			string password = PasswordBox.Password;
+			string repeatPassword = RepeatPasswordBox.Password;
+
+			if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(repeatPassword))
+			{
+				PasswordMatchText.Text = "";
+				_passwordsMatch = false;
+			}
+			else if (password == repeatPassword)
+			{
+				PasswordMatchText.Text = "Пароли совпадают";
+				PasswordMatchText.Foreground = Brushes.Green;
+				_passwordsMatch = true;
+			}
+			else
+			{
+				PasswordMatchText.Text = "Пароли не совпадают";
+				PasswordMatchText.Foreground = Brushes.Red;
+				_passwordsMatch = false;
+			}
+		}
+
+		// Обработчик события выбора CheckBox "Это врач"
 		private void IsDoctorCheckBox_Checked(object sender, RoutedEventArgs e)
 		{
 			DoctorLabel.Visibility = Visibility.Visible;
 			DoctorComboBox.Visibility = Visibility.Visible;
 
-			// Скрытие полей ФИО и Роль
+			// Скрываем поля для ручного ввода ФИО
 			LastNameLabel.Visibility = Visibility.Collapsed;
 			LastNameTextBox.Visibility = Visibility.Collapsed;
 			FirstNameLabel.Visibility = Visibility.Collapsed;
@@ -76,20 +109,21 @@ namespace Hospital.AdminWindow
 			RoleComboBox.Visibility = Visibility.Collapsed;
 
 			// Автоматический выбор роли "Врач"
-			var doctorRole = _db.Роль.FirstOrDefault(r => r.Ниаменование == "Врач");
+			var doctorRole = db.Роль.FirstOrDefault(r => r.Ниаменование == "Врач");
 			if (doctorRole != null)
 			{
 				RoleComboBox.SelectedValue = doctorRole.НомерЗаписи;
 			}
 		}
 
+		// Обработчик события снятия выбора CheckBox "Это врач"
 		private void IsDoctorCheckBox_Unchecked(object sender, RoutedEventArgs e)
 		{
 			DoctorLabel.Visibility = Visibility.Collapsed;
 			DoctorComboBox.Visibility = Visibility.Collapsed;
 			DoctorComboBox.SelectedItem = null;
 
-			// Показ полей ФИО и Роль
+			// Показываем поля для ручного ввода ФИО
 			LastNameLabel.Visibility = Visibility.Visible;
 			LastNameTextBox.Visibility = Visibility.Visible;
 			FirstNameLabel.Visibility = Visibility.Visible;
@@ -103,6 +137,7 @@ namespace Hospital.AdminWindow
 			RoleComboBox.SelectedItem = null;
 		}
 
+		// Обработчик изменения выбранной роли
 		private void RoleComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			if (RoleComboBox.SelectedItem != null)
@@ -117,80 +152,92 @@ namespace Hospital.AdminWindow
 			}
 		}
 
+		// Обработчик нажатия кнопки "Сохранить"
 		private void SaveButton_Click(object sender, RoutedEventArgs e)
 		{
 			try
 			{
-				if (string.IsNullOrWhiteSpace(LoginTextBox.Text) || string.IsNullOrWhiteSpace(PasswordBox.Text))
+				// Проверка обязательных полей
+				if (string.IsNullOrWhiteSpace(LoginTextBox.Text) || string.IsNullOrWhiteSpace(PasswordBox.Password))
 				{
-					MessageBox.Show("Логин и пароль обязательны для заполнения!", "Ошибка",
-						MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show("Логин и пароль обязательны для заполнения!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+					return;
+				}
+
+				// Проверка совпадения паролей
+				if (!_passwordsMatch)
+				{
+					MessageBox.Show("Пароли не совпадают!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 					return;
 				}
 
 				// Для врача проверка, что врач выбран
 				if (IsDoctorCheckBox.IsChecked == true && DoctorComboBox.SelectedItem == null)
 				{
-					MessageBox.Show("Необходимо выбрать врача!", "Ошибка",
-						MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show("Необходимо выбрать врача!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 					return;
 				}
 
-				// Для обычного пользователя проверка заполнения ФИО и роли
-				if (IsDoctorCheckBox.IsChecked != true && (string.IsNullOrWhiteSpace(LastNameTextBox.Text) || string.IsNullOrWhiteSpace(FirstNameTextBox.Text) ||
-					RoleComboBox.SelectedItem == null))
+				// Создаем нового пользователя
+				var newUser = new Пользователи
 				{
-					MessageBox.Show("Для обычного пользователя необходимо заполнить ФИО и выбрать роль!", "Ошибка",
-						MessageBoxButton.OK, MessageBoxImage.Error);
-					return;
+					Логин = LoginTextBox.Text,
+					Пароль = PasswordBox.Password,
+					Роль = (int)RoleComboBox.SelectedValue
+				};
+
+				// Если это врач, заполняем данные из выбранного врача
+				if (IsDoctorCheckBox.IsChecked == true && DoctorComboBox.SelectedItem != null)
+				{
+					dynamic selectedDoctor = DoctorComboBox.SelectedItem;
+					newUser.НомерВрача = selectedDoctor.НомерВрача;
+
+					// Заполняем ФИО из данных врача
+					newUser.Фамилия = selectedDoctor.Фамилия;
+					newUser.Имя = selectedDoctor.Имя;
+					newUser.Отчество = selectedDoctor.Отчество;
+				}
+				else
+				{
+					// Для обычного пользователя проверка заполнения ФИО
+					if (string.IsNullOrWhiteSpace(LastNameTextBox.Text) || string.IsNullOrWhiteSpace(FirstNameTextBox.Text))
+					{
+						MessageBox.Show("Для обычного пользователя необходимо заполнить ФИО!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+						return;
+					}
+
+					newUser.Фамилия = LastNameTextBox.Text;
+					newUser.Имя = FirstNameTextBox.Text;
+					newUser.Отчество = MiddleNameTextBox.Text;
 				}
 
 				// Проверка на уникальность логина
-				if (_db.Пользователи.Any(u => u.Логин == LoginTextBox.Text))
+				if (db.Пользователи.Any(u => u.Логин == LoginTextBox.Text))
 				{
-					MessageBox.Show("Пользователь с таким логином уже существует!", "Ошибка",
-						MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show("Пользователь с таким логином уже существует!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 					return;
 				}
 
 				try
 				{
-					var newUser = new Пользователи
-					{
-						Логин = LoginTextBox.Text,
-						Пароль = PasswordBox.Text,
-						Фамилия = LastNameTextBox.Text,
-						Имя = FirstNameTextBox.Text,
-						Отчество = MiddleNameTextBox.Text,
-						Роль = (int)RoleComboBox.SelectedValue
-					};
-
-					// Если это врач, связка с выбранным врачом
-					if (IsDoctorCheckBox.IsChecked == true && DoctorComboBox.SelectedItem != null)
-					{
-						dynamic selectedDoctor = DoctorComboBox.SelectedItem;
-						newUser.НомерВрача = selectedDoctor.НомерВрача;
-					}
-
-					_db.Пользователи.Add(newUser);
-					_db.SaveChanges();
+					db.Пользователи.Add(newUser);
+					db.SaveChanges();
 
 					DialogResult = true;
 					Close();
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show($"Ошибка при сохранении пользователя: {ex.Message}", "Ошибка",
-						MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show($"Ошибка при сохранении пользователя: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 				}
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show($"Ошибка при сохранении пользователя: {ex.Message}", "Ошибка",
-						MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show($"Ошибка при сохранении пользователя: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
+		// Обработчик нажатия кнопки "Отмена"
 		private void CancelButton_Click(object sender, RoutedEventArgs e)
 		{
 			DialogResult = false;

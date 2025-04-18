@@ -14,5 +14,6 @@ namespace Hospital.AdminWindow
 		public string Имя { get; set; }
 		public string Отчество { get; set; }
 		public string Роль { get; set; }
+		public string ВрачInfo { get; set; }
 	}
 }

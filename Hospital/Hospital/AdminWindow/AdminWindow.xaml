@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital.AdminWindow"
         mc:Ignorable="d"
-        Title="Hospital" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="Hospital" Height="450" Width="800" MinHeight="450" MinWidth="800" WindowState="Maximized" Icon="/Hospital;component/Image/MedicalIcon.ico">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -18,7 +18,9 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0">
-            <Button Grid.Column="0" Grid.Row="0" Width="140" Content="Пользователи" x:Name="UsersView" Click="UsersView_Click"/>
+            <Button Grid.Column="0" Grid.Row="0" Content="Выйти" x:Name="ExitBt" Click="ExitBt_Click"/>
+            <Button Grid.Column="0" Grid.Row="0" Margin="0, 10, 0, 0" Content="Пользователи" x:Name="UsersView" Click="UsersView_Click"/>
+            <Button Grid.Column="0" Grid.Row="0" Margin="0, 10, 0, 0" Content="Врачи" x:Name="DoctorsView" Click="DoctorsView_Click"/>
         </StackPanel>
 
         <!-- Контентная область -->

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="МедДосье.AuthPage"
+             Title="Авторизация"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView Margin="0,20,0,0">
+            <StackLayout Padding="20" Spacing="15" VerticalOptions="Center">
+
+                <!-- Поле ввода логина (email/телефон) -->
+                <Frame BackgroundColor="#F5F5F5" 
+                   CornerRadius="10" 
+                   HasShadow="False" 
+                   Padding="15,0">
+                    <Entry Placeholder="Email" 
+                       x:Name="EmailEntry"
+                       Keyboard="Email" 
+                       TextColor="Black"/>
+                </Frame>
+
+                <!-- Поле ввода пароля -->
+                <Frame BackgroundColor="#F5F5F5" 
+                   CornerRadius="10" 
+                   HasShadow="False" 
+                   Padding="15,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="PasswordEntry" 
+                           Placeholder="Пароль" 
+                           IsPassword="True" 
+                           TextColor="Black"
+                           HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Кнопка "Забыли пароль?" -->
+                <Label Text="Забыли пароль?" 
+                   TextColor="Brown" 
+                   HorizontalOptions="End"
+                   FontSize="14">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <!-- Кнопка Войти -->
+                <Button Text="Войти" 
+                    BackgroundColor="Brown" 
+                    TextColor="White" 
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    FontAttributes="Bold"
+                    Clicked="OnLoginClicked"/>
+
+                <!-- Разделитель -->
+                <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center" 
+                         VerticalOptions="Center"
+                         Spacing="10">
+                    <BoxView Color="LightGray" 
+                         HeightRequest="1" 
+                         WidthRequest="100"
+                         VerticalOptions="Center"/>
+                    <Label Text="или" 
+                       TextColor="Gray" 
+                       FontSize="14"/>
+                    <BoxView Color="LightGray" 
+                         HeightRequest="1" 
+                         WidthRequest="100"
+                         VerticalOptions="Center"/>
+                </StackLayout>
+
+                <!-- Кнопка Зарегистрироваться -->
+                <Button Text="Зарегистрироваться" 
+                    BackgroundColor="White" 
+                    TextColor="Brown" 
+                    CornerRadius="25"
+                    BorderColor="Brown"
+                    BorderWidth="1"
+                    HeightRequest="50"
+                    FontAttributes="Bold"
+                    Clicked="OnRegisterClicked"/>
+
+                <!-- Соглашение -->
+                <Label Text="Нажимая кнопку, вы принимаете условия Пользовательского соглашения и даёте согласие на обработку персональных данных"
+                   FontSize="12" 
+                   TextColor="Gray" 
+                   HorizontalOptions="Center" 
+                   HorizontalTextAlignment="Center"
+                   Margin="0,20,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAgreementTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

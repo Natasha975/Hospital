@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Наталья\Documents\Производственная практика\Hospital\Hospital\App.xaml
-9-1034633088
+101930150429
 2-1372435529
-371269697233
+411400125257
 211664650601
-AdminWindow\AddDoctorWindow.xaml;AdminWindow\AddUserWindow.xaml;AdminWindow\AdminWindow.xaml;AdminWindow\DoctorPage.xaml;AdminWindow\PatientPage.xaml;AdminWindow\UsersPage.xaml;MainWindow.xaml;RegistrarWindow\AddPatientWindow.xaml;RegistrarWindow\RegistrarWindow.xaml;
+AdminWindow\AddDoctorWindow.xaml;AdminWindow\AddUserWindow.xaml;AdminWindow\AdminWindow.xaml;AdminWindow\DoctorPage.xaml;AdminWindow\UsersPage.xaml;MainWindow.xaml;RegistrarWindow\AddPatientWindow.xaml;RegistrarWindow\EditPatientPage.xaml;RegistrarWindow\PatientPage.xaml;RegistrarWindow\RegistrarWindow.xaml;
 
-True
+False
 
